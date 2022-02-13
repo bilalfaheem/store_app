@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:store_app/screens/home_screen.dart';
 
 import 'package:store_app/screens/login_screen.dart';
 
@@ -18,7 +19,7 @@ class _Splash_screenState extends State<Splash_screen> {
     Timer(
         Duration(seconds: 3),
         (() => Navigator.of(context).pushReplacement(MaterialPageRoute(
-            builder: (BuildContext context) => Login_screen()))));
+            builder: (BuildContext context) => Home_screen()))));
   }
 
   Widget build(BuildContext context) {
