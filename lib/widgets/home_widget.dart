@@ -6,21 +6,6 @@ import 'package:store_app/widgets/cart_widget.dart';
 import 'package:store_app/widgets/favorite_widget.dart';
 import 'package:store_app/widgets/feed_widget.dart';
 
-// class Home_widget extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Column(children: [
-//       Center(child: Text("Home_Widget")),
-//       TextButton(
-//           onPressed: () {
-//             Navigator.push(context,
-//                 MaterialPageRoute(builder: (context) => Account_widget()));
-//           },
-//           child: Text("Account"))
-//     ]);
-//   }
-// }
-
 class Home_widget extends StatefulWidget {
   const Home_widget({Key? key}) : super(key: key);
 
@@ -39,7 +24,13 @@ class _Home_widgetState extends State<Home_widget> {
 
   @override
   Widget build(BuildContext context) => Scaffold(
+
+//Body
+
       body: screens[currentIndex],
+
+//Bottom Navigation Bar
+
       bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
           currentIndex: currentIndex,
@@ -49,7 +40,7 @@ class _Home_widgetState extends State<Home_widget> {
           showUnselectedLabels: false,
           selectedItemColor: Theme.of(context).primaryColor,
           unselectedItemColor: grey,
-          items: [
+          items: const [
             BottomNavigationBarItem(
                 icon: FaIcon(
                   Icons.home_sharp,

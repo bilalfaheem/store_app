@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:store_app/main.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:store_app/methods/email_sign_in.dart';
 import 'package:store_app/methods/google_sign_in.dart';
+import 'package:store_app/widgets/signup_widget.dart';
+
+bool create_account = false;
+TextEditingController Email_controller = TextEditingController();
+TextEditingController Password_controller = TextEditingController();
 
 class Login_widget extends StatelessWidget {
   //controller
-
-  TextEditingController Email_controller = TextEditingController();
-  TextEditingController Password_controller = TextEditingController();
 
   @override
   Widget build(BuildContext context) => ListView(shrinkWrap: true, children: [
@@ -62,7 +66,7 @@ class Login_widget extends StatelessWidget {
                   MediaQuery.of(context).size.width * 0.1,
                   MediaQuery.of(context).size.height * 0.05,
                   MediaQuery.of(context).size.width * 0.1,
-                  MediaQuery.of(context).size.height * 0.05),
+                  MediaQuery.of(context).size.height * 0.0),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(25),
                   color: Theme.of(context).dividerColor),
@@ -84,6 +88,28 @@ class Login_widget extends StatelessWidget {
               ),
             ),
 
+//Create Account
+
+            Container(
+              height: 30,
+              child: Align(
+                  alignment: Alignment.topRight,
+                  child: TextButton(
+                      onPressed: () {
+                        create_account = true;
+                        print(create_account);
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (BuildContext context) =>
+                                Signup_widget()));
+                      },
+                      child: Padding(
+                          padding: EdgeInsets.only(right: 33),
+                          child: Text(
+                            "Create An Account",
+                            style: TextStyle(color: blue, fontSize: 15),
+                          )))),
+            ),
+
 //Login Button
 
             Container(
@@ -98,8 +124,9 @@ class Login_widget extends StatelessWidget {
                     color: Theme.of(context).primaryColor),
                 child: TextButton(
                     onPressed: () {
-                      Email_controller.clear();
-                      Password_controller.clear();
+                      Email_sign_in().log_In_Firebase(context);
+                      // Email_controller.clear();
+                      // Password_controller.clear();
                     },
                     child: Text(
                       "Login",

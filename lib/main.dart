@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
         primaryColorDark: Colors.black,
         primarySwatch: Colors.red,
         scaffoldBackgroundColor: Colors.white,
-        dividerColor: Color(0xFF202020),
+        dividerColor: grey,
         hintColor: Colors.white,
 
         //Button theme
@@ -37,6 +37,10 @@ class MyApp extends StatelessWidget {
         //Text theme
 
         textTheme: TextTheme(
+            headline1: TextStyle(
+                fontSize: 25,
+                fontWeight: FontWeight.w500,
+                color: Colors.redAccent),
             button: TextStyle(
                 fontSize: 25,
                 fontWeight: FontWeight.w500,
