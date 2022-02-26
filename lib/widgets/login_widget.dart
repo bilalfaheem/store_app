@@ -125,8 +125,8 @@ class Login_widget extends StatelessWidget {
                 child: TextButton(
                     onPressed: () {
                       Email_sign_in().log_In_Firebase(context);
-                      // Email_controller.clear();
-                      // Password_controller.clear();
+                      Email_controller.clear();
+                      Password_controller.clear();
                     },
                     child: Text(
                       "Login",

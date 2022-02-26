@@ -1,7 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+
 import 'package:store_app/methods/email_sign_in.dart';
 import 'package:store_app/methods/google_sign_in.dart';
+import 'package:store_app/screens/home_screen.dart';
 
 // class Account_widget extends StatelessWidget {
 //   @override
@@ -60,9 +62,8 @@ class _Account_widgetState extends State<Account_widget> {
               onPressed: () {
                 signInWithGoogle().googleLogout();
                 Email_sign_in().email_sign_out();
-                setState(() {
-                  FirebaseAuth.instance.currentUser;
-                });
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (BuildContext context) => Home_screen()));
               },
               child: Text("Log Out"))
         ],

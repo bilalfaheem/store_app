@@ -14,7 +14,7 @@ class Home_widget extends StatefulWidget {
 }
 
 class _Home_widgetState extends State<Home_widget> {
-  int currentIndex = 0;
+  int currentIndex = 1;
   final screens = [
     Feed_widget(),
     Cart_widget(),

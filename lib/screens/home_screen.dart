@@ -7,7 +7,7 @@ import 'package:store_app/widgets/login_widget.dart';
 import 'package:store_app/widgets/signup_widget.dart';
 
 class Home_screen extends StatelessWidget {
-  // FirebaseAuth auth = FirebaseAuth.instance;
+  FirebaseAuth auth = FirebaseAuth.instance;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
